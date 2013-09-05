@@ -162,13 +162,13 @@ fieldset { border: 0; margin: 0; padding: 0; }
 
 textarea { resize: vertical; }
 
-body { color: #444444; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+body { color: #444444; font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
 
 a, a:visited { color: #333333; text-decoration: underline; outline: 0; }
 
 a:hover, a:focus { color: black; }
 
-h1, h2, h3, h4, h5 { color: #111111; font-family: "Source Sans Pro", "Lato", Helvetica, Arial, sans-serif; }
+h1, h2, h3, h4, h5 { color: #111111; font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 
