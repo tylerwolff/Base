@@ -1,0 +1,228 @@
+@import "normalize.css"
+@import "compass"
+
+
+// ---------------------------------------------------------------------------------
+// Base Style Setup & Overrides
+// ---------------------------------------------------------------------------------
+
+@function black($opacity)
+  @return rgba(0,0,0,$opacity)
+
+@function white($opacity)
+  @return rgba(255,255,255,$opacity)
+
+$base-font-size: 16px
+$base-line-height: 24px
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+$heading-font-family: "Source Sans Pro", "Lato", Helvetica, Arial, sans-serif
+$bold-font-weight: 700
+$demi-font-weight: 500
+$normal-font-weight: 400
+
+@include establish-baseline
+
+img
+  vertical-align: middle
+
+fieldset
+  border: 0
+  margin: 0
+  padding: 0
+
+textarea
+  resize: vertical
+
+// ---------------------------------------------------------------------------------
+// Layout Styles
+// ---------------------------------------------------------------------------------
+
+
+body
+  color: #444
+  font-family: $base-font-family
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+
+// ---------------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------------
+
+a,
+a:visited
+  color: #333
+  text-decoration: underline
+  outline: 0
+
+a:hover,
+a:focus
+  color: #000
+
+h1, h2, h3, h4, h5
+  color: #111
+  font-family: $heading-font-family
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+  font-weight: inherit
+
+h1
+  +adjust-font-size-to 46px
+h2
+  +adjust-font-size-to 35px
+h3
+  +adjust-font-size-to 28px
+h4
+  +adjust-font-size-to 21px
+h5
+  +adjust-font-size-to 17px
+h6
+  +adjust-font-size-to 14px
+
+em
+  font-style: italic
+
+strong
+  font-weight: $bold-font-weight
+  color: #333
+
+small
+  font-size: 80%
+
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid #cccccc
+  margin: 1em 0
+  padding: 0
+
+\::-moz-selection,
+::selection
+  background: #b3d4fc
+  text-shadow: none
+
+// ---------------------------------------------------------------------------------
+// Media Queries
+// ---------------------------------------------------------------------------------
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)
+
+@media only screen and (min-width: 480px)
+
+@media only screen and (min-width: 768px)
+
+@media only screen and (min-width: 1140px)
+
+
+// ---------------------------------------------------------------------------------
+// Helper classes
+// ---------------------------------------------------------------------------------
+
+img.fluid
+  max-width: 100%
+  height: auto
+
+.align-left
+  float: left
+
+.align-right
+  float: right
+
+.text-left
+  text-align: left
+
+.text-right
+  text-align: right
+
+.text-center
+  text-align: center
+
+.ir
+  background-color: transparent
+  border: 0
+  overflow: hidden
+  *text-indent: -9999px
+  &:before
+    content: ""
+    display: block
+    width: 0
+    height: 150%
+
+.hidden
+  display: none !important
+  visibility: hidden
+
+.visuallyhidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+  &.focusable
+    &:active, &:focus
+      clip: auto
+      height: auto
+      margin: 0
+      overflow: visible
+      position: static
+      width: auto
+
+.invisible
+  visibility: hidden
+
+.clearfix
+  &:before
+    content: " "
+    display: table
+  &:after
+    content: " "
+    display: table
+    clear: both
+  *zoom: 1
+
+
+// ---------------------------------------------------------------------------------
+// Print styles
+// ---------------------------------------------------------------------------------
+
+
+@media print
+  *
+    background: transparent !important
+    color: black !important
+    box-shadow: none !important
+    text-shadow: none !important
+  a
+    text-decoration: underline
+    &:visited
+      text-decoration: underline
+    &[href]:after
+      content: " (" attr(href) ")"
+  abbr[title]:after
+    content: " (" attr(title) ")"
+  .ir a:after
+    content: ""
+  a
+    &[href^="javascript:"]:after, &[href^="#"]:after
+      content: ""
+  pre, blockquote
+    border: 1px solid #999999
+    page-break-inside: avoid
+  thead
+    display: table-header-group
+  tr
+    page-break-inside: avoid
+  img
+    page-break-inside: avoid
+    max-width: 100% !important
+  @page
+    margin: 0.5cm
+  p, h2, h3
+    orphans: 3
+    widows: 3
+  h2, h3
+    page-break-after: avoid
